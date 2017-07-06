@@ -61,6 +61,7 @@ export default class UtilsDecorator extends Component {
       styles.content = Object.assign(styles.content, item.content);
     }
 
+    console.log(this.story);
 
     document.body.style.margin = 0;
 
