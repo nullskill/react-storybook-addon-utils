@@ -25,6 +25,8 @@ export default class UtilsDecorator extends Component {
   }
 
   componentWillMount() {
+    // console.log('componentWillMount()');
+    
     this.channel.on(KEY, this.onChange);
     this.channel.emit(KEY + '-set', this.props.config);
   }
@@ -36,6 +38,8 @@ export default class UtilsDecorator extends Component {
   }
 
   componentWillUnmount() {
+    // console.log('componentWillUnmount()');
+
     this.channel.removeListener(KEY, this.onChange);
     this.channel.emit(KEY + '-unset');
   }
@@ -60,8 +64,6 @@ export default class UtilsDecorator extends Component {
       styles.wrap = Object.assign(styles.wrap, item.wrap);
       styles.content = Object.assign(styles.content, item.content);
     }
-
-    console.log(this.story);
 
     document.body.style.margin = 0;
 
